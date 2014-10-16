@@ -1,3 +1,5 @@
 
 .idea
 BootFlyWS.iml
+gradle.properties
+build

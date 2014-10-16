@@ -1,0 +1,42 @@
+
+buildscript {
+    ext {
+        springBootVersion = '1.1.8'
+    }
+    repositories {
+        // NOTE: You should declare only repositories that you need here
+        mavenLocal()
+        mavenCentral()
+        maven { url "http://repo.spring.io/release" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'scala'
+apply plugin: 'groovy'
+apply plugin: 'antlr'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+sourceCompatibility = 1.7
+//sourceCompatibility = 1.5
+version = '1.0'
+
+repositories {
+    // NOTE: You should declare only repositories that you need here
+    mavenLocal()
+    mavenCentral()
+    maven { url "http://repo.spring.io/release" }
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:1.1.8.RELEASE")
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+
+

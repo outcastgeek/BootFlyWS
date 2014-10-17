@@ -2,6 +2,7 @@
 buildscript {
     ext {
         springBootVersion = '1.1.8.RELEASE'
+        appEngineVersion = '1.9.13'
     }
     repositories {
         // NOTE: You should declare only repositories that you need here
@@ -11,6 +12,7 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("com.google.appengine:gradle-appengine-plugin:${appEngineVersion}")
     }
 }
 
@@ -20,6 +22,7 @@ apply plugin: 'antlr'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
+apply plugin: 'appengine'
 
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
@@ -38,7 +41,6 @@ dependencies {
         exclude module: "spring-boot-starter-tomcat"
     }
     compile("org.springframework.boot:spring-boot-starter-jetty")
-    compile("org.springframework.boot:spring-boot-starter-groovy-templates")
     compile("org.springframework.boot:spring-boot-starter-actuator")
     compile("org.eclipse.jetty:jetty-webapp:9.+")
     compile("org.eclipse.jetty:jetty-jsp:9.+")
@@ -48,4 +50,26 @@ dependencies {
 
 run {
     systemProperties = System.properties
+}
+
+appengine {
+    httpPort = 8085
+
+    appcfg {
+        email = 'outcastgeek+bootflyws@gmail.com'
+        passIn = true
+
+        logs {
+            severity = 1
+            outputFile = file('logs/app.log')
+        }
+
+        app {
+            id = 'boot-fly-ws'
+        }
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.1'
 }

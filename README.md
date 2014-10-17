@@ -13,3 +13,5 @@ Exploring Spring Boot
   systemProp.http.proxyPassword=password
   systemProp.http.nonProxyHosts=*.nonproxyrepos.com|localhost
 ```
+- Check this out: <a href="http://docs.spring.io/spring-boot/docs/1.1.8.RELEASE/reference/htmlsingle/#using-boot-starter-poms" target="__blank">http://docs.spring.io/spring-boot/docs/1.1.8.RELEASE/reference/htmlsingle/#using-boot-starter-poms</a>
+- Check this out: <a href="http://beta.groovy-lang.org/docs/groovy-2.3.0/html/documentation/markup-template-engine.html" target="__blank">http://beta.groovy-lang.org/docs/groovy-2.3.0/html/documentation/markup-template-engine.html</a>

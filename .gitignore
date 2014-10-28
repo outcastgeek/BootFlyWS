@@ -4,3 +4,4 @@ BootFlyWS.iml
 gradle.properties
 build
 .gradle/
+out

@@ -6,10 +6,11 @@ import org.mockito.ArgumentCaptor
 import org.mockito.Captor
 import org.mockito.Mock
 import org.mockito.MockitoAnnotations
-import static org.mockito.Mockito.verify
 import org.springframework.ui.Model
 
-class SampleControllerTest {
+import static org.mockito.Mockito.verify
+
+class HelloControllerTest {
 
     @Mock
     Model model
@@ -26,16 +27,19 @@ class SampleControllerTest {
     }
 
     @Test
-    void testHello() {
+    void testGreet() {
+
+        // Setup
+        String name = "Jambert"
 
         // Run
-        String response = new SampleController().home(model)
+        String response = new HelloController().greet(name, model)
 
         // Verify
         verify(model).addAttribute(keyCaptor.capture(), valueCaptor.capture())
-        assert "hello" == response
-        assert "greeting" == keyCaptor.value
-        assert "Hello World!" == valueCaptor.value
+        assert "greet" == response
+        assert "name" == keyCaptor.value
+        assert name == valueCaptor.value
     }
 }
 

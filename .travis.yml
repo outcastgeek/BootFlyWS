@@ -1,0 +1,5 @@
+language: java
+jdk:
+- openjdk7 # OpenJDK7
+- oraclejdk7 # Oracle's JDK7
+script: gradle check

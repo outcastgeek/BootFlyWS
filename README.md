@@ -1,4 +1,4 @@
-BootFlyWS
+BootFlyWS [![Build Status](https://secure.travis-ci.org/outcastgeek/BootFlyWS.png?branch=master)](http://travis-ci.org/outcastgeek/BootFlyWS)
 =========
 
 Exploring Spring Boot

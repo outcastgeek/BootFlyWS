@@ -1,7 +1,6 @@
 language: java
 jdk:
 - openjdk7 # OpenJDK7
-- openjdk8 # OpenJDK8
 - oraclejdk7 # Oracle's JDK7
 - oraclejdk8 # Oracle's JDK8
 script: gradle check
